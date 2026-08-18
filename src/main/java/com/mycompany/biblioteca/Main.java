@@ -255,4 +255,17 @@ public class Main {
 
         System.out.println("Préstamo no encontrado.");
     }
+    public static void listarPrestamos() {
+
+        if (prestamos.isEmpty()) {
+            System.out.println("No hay préstamos registrados.");
+            return;
+        }
+
+        System.out.println("Lista de préstamos:");
+
+        for (Prestamo prestamo : prestamos) {
+            System.out.println(prestamo);
+        }
+    }
 }
