@@ -32,4 +32,17 @@ public class Main {
 
         System.out.println("Cliente creado correctamente.");
     }
+    public static void listarClientes() {
+
+        if (clientes.isEmpty()) {
+            System.out.println("No hay clientes registrados.");
+            return;
+        }
+
+        System.out.println("Lista de clientes:");
+
+        for (Cliente cliente : clientes) {
+            System.out.println(cliente);
+        }
+    }
 }
