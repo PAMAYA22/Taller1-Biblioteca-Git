@@ -125,4 +125,14 @@ public class Main {
 
         System.out.println("Libro creado correctamente.");
     }
+    public static void listarLibros(){
+        if(libros.isEmpty()){
+           System.out.println("No hay libros registrados.");
+           return;
+        }
+        System.out.println("Lista de libros:");
+        for (Libro libro :libros){
+            System.out.println(libro);
+        }
+    }
 }
