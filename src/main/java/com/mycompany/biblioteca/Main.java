@@ -45,4 +45,15 @@ public class Main {
             System.out.println(cliente);
         }
     }
+    public static Cliente buscarCliente(String id) {
+
+        for (Cliente cliente : clientes) {
+
+            if (cliente.getId().equalsIgnoreCase(id)) {
+                return cliente;
+            }
+        }
+
+        return null;
+    }
 }
