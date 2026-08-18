@@ -4,12 +4,12 @@ public class Persona {
 
    private String id;
    private String nombre;
-   private String cel;
+   private String telefono;
 
-    public Persona(String id, String nombre, String cel) {
+    public Persona(String id, String nombre, String telefono) {
         this.id = id;
         this.nombre = nombre;
-        this.cel = cel;
+        this.telefono = telefono;
     }
 
     public String getId() {
@@ -28,11 +28,11 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String getCel() {
-        return cel;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setCel(String cel) {
-        this.cel = cel;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }

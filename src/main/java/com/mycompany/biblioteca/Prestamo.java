@@ -61,12 +61,12 @@ public class Prestamo {
 
     @Override
     public String toString() {
-        return "Prestamo{" +
-                "idPrestamo='" + idPrestamo + '\'' +
-                ", cliente=" + cliente.getNombre() +
-                ", libro=" + libro.getTitulo() +
-                ", fecha=" + fecha +
-                ", estado='" + estado + '\'' +
-                '}';
+        return "----------------------------------------\n" +
+                "ID Préstamo : " + idPrestamo + "\n" +
+                "Cliente     : " + cliente.getNombre() + "\n" +
+                "Libro       : " + libro.getTitulo() + "\n" +
+                "Fecha       : " + fecha + "\n" +
+                "Estado      : " + estado + "\n" +
+                "----------------------------------------";
     }
 }

@@ -29,13 +29,12 @@ public class Libro extends Material {
 
     @Override
     public String toString() {
-        return "libro{"+
-                "codigo="+ getCodigo() + '\'' +
-                ", titulo='" + getTitulo() + '\'' +
-                ", aniopublicacion='" + getAniopublicacion() + '\'' +
-                ", autor='" + autor + '\'' +
-                ", disponible=" + disponible +
-                '}';
-
+        return "----------------------------------------\n" +
+                "Código       : " + getCodigo() + "\n" +
+                "Título       : " + getTitulo() + "\n" +
+                "Año          : " + getAniopublicacion() + "\n" +
+                "Autor        : " + autor + "\n" +
+                "Disponible   : " + (disponible ? "Sí" : "No") + "\n" +
+                "----------------------------------------";
     }
 }
