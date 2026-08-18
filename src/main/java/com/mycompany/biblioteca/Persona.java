@@ -3,12 +3,12 @@ package com.mycompany.biblioteca;
 public class Persona {
 
    private String id;
-   private String name;
+   private String nombre;
    private String cel;
 
-    public Persona(String id, String name, String cel) {
+    public Persona(String id, String nombre, String cel) {
         this.id = id;
-        this.name = name;
+        this.nombre = nombre;
         this.cel = cel;
     }
 
@@ -20,12 +20,12 @@ public class Persona {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getCel() {

@@ -78,7 +78,7 @@ public class Main {
         System.out.print("Nuevo email: ");
         String email = sc.nextLine();
 
-        cliente.setName(nombre);
+        cliente.setNombre(nombre);
         cliente.setCel(telefono);
         cliente.setEmail(email);
 
