@@ -137,10 +137,37 @@ public class Main {
     }
     public static Libro buscarLibro(String code) {
         for (Libro libro: libros){
-            if (libro.getCode().equalsIgnoreCase(code)){
+            if (libro.getCodigo().equalsIgnoreCase(code)){
                 return libro;
             }
         }
         return null;
+    }
+    public static void actualizarLibro (){
+
+        System.out.println("Ingrese el codigo del libro a actualizar:");
+        String codigo = sc.nextLine();
+
+        Libro libro = buscarLibro(codigo);
+
+        if (libro==null){
+            System.out.println("Libro no encontrado.");
+        }
+
+        System.out.println("Nuevo titulo: ");
+        String titulo = sc.nextLine();
+
+        System.out.println("Nuevo año de publicacion: ");
+        String aniopublicacion = sc.nextLine();
+
+        System.out.println("Nuevo Autor: ");
+        String autor = sc.nextLine();
+
+        libro.setTitulo(titulo);
+        libro.setAniopublicacion(aniopublicacion);
+        libro.setAutor(codigo);
+
+        System.out.println("Libro actualizado correctamente.");
+
     }
 }

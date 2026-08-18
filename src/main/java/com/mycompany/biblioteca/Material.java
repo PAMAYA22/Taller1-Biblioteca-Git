@@ -2,37 +2,37 @@ package com.mycompany.biblioteca;
 
 public class Material {
 
-    private String code;
-    private String title;
-    private String aniopublication;
+    private String codigo;
+    private String titulo;
+    private String aniopublicacion;
 
-    public Material(String code, String title, String aniopublication) {
-        this.code = code;
-        this.title = title;
-        this.aniopublication = aniopublication;
+    public Material(String codigo, String titulo, String aniopublicacion) {
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.aniopublicacion = aniopublicacion;
     }
 
-    public String getCode() {
-        return code;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getAniopublication() {
-        return aniopublication;
+    public String getAniopublicacion() {
+        return aniopublicacion;
     }
 
-    public void setAniopublication(String aniopublication) {
-        this.aniopublication = aniopublication;
+    public void setAniopublicacion(String aniopublicacion) {
+        this.aniopublicacion = aniopublicacion;
     }
 }
