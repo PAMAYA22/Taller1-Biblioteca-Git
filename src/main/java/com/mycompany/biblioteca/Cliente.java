@@ -16,13 +16,14 @@ public class Cliente extends Persona {
     public void setEmail(String email) {
         this.email = email;
     }
+
     @Override
     public String toString() {
-        return "Cliente{" +
-                "id='" + getId() + '\'' +
-                ", nombre='" + getNombre() + '\'' +
-                ", telefono='" + getCel() + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "----------------------------------------\n" +
+                "ID       : " + getId() + "\n" +
+                "Nombre   : " + getNombre() + "\n" +
+                "Teléfono : " + getTelefono() + "\n" +
+                "Email    : " + email + "\n" +
+                "----------------------------------------";
     }
 }

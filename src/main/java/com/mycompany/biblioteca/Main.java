@@ -13,6 +13,49 @@ public class Main {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+
+        int opcion;
+
+        do {
+
+            System.out.println("\n==============================");
+            System.out.println("   SISTEMA DE BIBLIOTECA");
+            System.out.println("==============================");
+            System.out.println("1. Gestión de clientes");
+            System.out.println("2. Gestión de libros");
+            System.out.println("3. Gestión de préstamos");
+            System.out.println("0. Salir");
+            System.out.print("Seleccione una opción: ");
+
+            try {
+                opcion = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                opcion = -1;
+            }
+
+            switch (opcion) {
+
+                case 1:
+                    menuClientes();
+                    break;
+
+                case 2:
+                    menuLibros();
+                    break;
+
+                case 3:
+                    menuPrestamos();
+                    break;
+
+                case 0:
+                    System.out.println("Gracias por utilizar el sistema.");
+                    break;
+
+                default:
+                    System.out.println("Opción inválida.");
+            }
+
+        } while (opcion != 0);
     }
 
     public static void crearCliente() {
@@ -38,11 +81,11 @@ public class Main {
     public static void listarClientes() {
 
         if (clientes.isEmpty()) {
-            System.out.println("No hay clientes registrados.");
+            System.out.println("\nNo hay clientes registrados.");
             return;
         }
 
-        System.out.println("Lista de clientes:");
+        System.out.println("\n========== LISTA DE CLIENTES ==========");
 
         for (Cliente cliente : clientes) {
             System.out.println(cliente);
@@ -81,7 +124,7 @@ public class Main {
         String email = sc.nextLine();
 
         cliente.setNombre(nombre);
-        cliente.setCel(telefono);
+        cliente.setTelefono(telefono);
         cliente.setEmail(email);
 
         System.out.println("Cliente actualizado correctamente.");
@@ -127,13 +170,16 @@ public class Main {
 
         System.out.println("Libro creado correctamente.");
     }
-    public static void listarLibros(){
-        if(libros.isEmpty()){
-           System.out.println("No hay libros registrados.");
-           return;
+    public static void listarLibros() {
+
+        if (libros.isEmpty()) {
+            System.out.println("\nNo hay libros registrados.");
+            return;
         }
-        System.out.println("Lista de libros:");
-        for (Libro libro :libros){
+
+        System.out.println("\n========== LISTA DE LIBROS ==========");
+
+        for (Libro libro : libros) {
             System.out.println(libro);
         }
     }
@@ -258,14 +304,178 @@ public class Main {
     public static void listarPrestamos() {
 
         if (prestamos.isEmpty()) {
-            System.out.println("No hay préstamos registrados.");
+            System.out.println("\nNo hay préstamos registrados.");
             return;
         }
 
-        System.out.println("Lista de préstamos:");
+        System.out.println("\n========== LISTA DE PRÉSTAMOS ==========");
 
         for (Prestamo prestamo : prestamos) {
             System.out.println(prestamo);
         }
+    }
+    public static void menuClientes() {
+
+        int opcion;
+
+        do {
+
+            System.out.println("\n--- GESTIÓN DE CLIENTES ---");
+            System.out.println("1. Crear cliente");
+            System.out.println("2. Listar clientes");
+            System.out.println("3. Buscar cliente");
+            System.out.println("4. Actualizar cliente");
+            System.out.println("5. Eliminar cliente");
+            System.out.println("0. Volver");
+            System.out.print("Seleccione una opción: ");
+
+            try {
+                opcion = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                opcion = -1;
+            }
+
+            switch (opcion) {
+
+                case 1:
+                    crearCliente();
+                    break;
+
+                case 2:
+                    listarClientes();
+                    break;
+
+                case 3:
+                    System.out.print("Ingrese ID del cliente: ");
+                    String id = sc.nextLine();
+
+                    Cliente cliente = buscarCliente(id);
+
+                    if (cliente != null) {
+                        System.out.println(cliente);
+                    } else {
+                        System.out.println("Cliente no encontrado.");
+                    }
+                    break;
+
+                case 4:
+                    actualizarCliente();
+                    break;
+
+                case 5:
+                    elimiminarCliente();
+                    break;
+
+                case 0:
+                    break;
+
+                default:
+                    System.out.println("Opción inválida.");
+            }
+
+        } while (opcion != 0);
+    }
+    public static void menuLibros() {
+
+        int opcion;
+
+        do {
+
+            System.out.println("\n--- GESTIÓN DE LIBROS ---");
+            System.out.println("1. Crear libro");
+            System.out.println("2. Listar libros");
+            System.out.println("3. Buscar libro");
+            System.out.println("4. Actualizar libro");
+            System.out.println("5. Eliminar libro");
+            System.out.println("0. Volver");
+            System.out.print("Seleccione una opción: ");
+
+            try {
+                opcion = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                opcion = -1;
+            }
+
+            switch (opcion) {
+
+                case 1:
+                    crearLibro();
+                    break;
+
+                case 2:
+                    listarLibros();
+                    break;
+
+                case 3:
+                    System.out.print("Ingrese código del libro: ");
+                    String codigo = sc.nextLine();
+
+                    Libro libro = buscarLibro(codigo);
+
+                    if (libro != null) {
+                        System.out.println(libro);
+                    } else {
+                        System.out.println("Libro no encontrado.");
+                    }
+                    break;
+
+                case 4:
+                    actualizarLibro();
+                    break;
+
+                case 5:
+                    eliminarLibro();
+                    break;
+
+                case 0:
+                    break;
+
+                default:
+                    System.out.println("Opción inválida.");
+            }
+
+        } while (opcion != 0);
+    }
+    public static void menuPrestamos() {
+
+        int opcion;
+
+        do {
+
+            System.out.println("\n--- GESTIÓN DE PRÉSTAMOS ---");
+            System.out.println("1. Registrar préstamo");
+            System.out.println("2. Registrar devolución");
+            System.out.println("3. Listar préstamos");
+            System.out.println("0. Volver");
+            System.out.print("Seleccione una opción: ");
+
+            try {
+                opcion = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                opcion = -1;
+            }
+
+            switch (opcion) {
+
+                case 1:
+                    crearPrestamo();
+                    break;
+
+                case 2:
+                    devolucion();
+                    break;
+
+                case 3:
+                    listarPrestamos();
+                    break;
+
+                case 0:
+                    break;
+
+                default:
+                    System.out.println("Opción inválida.");
+            }
+
+        } while (opcion != 0);
     }
 }
