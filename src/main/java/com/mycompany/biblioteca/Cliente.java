@@ -4,8 +4,8 @@ public class Cliente extends Persona {
 
     private String email;
 
-    public Cliente(String id, String name, String cel, String email) {
-        super(id, name, cel);
+    public Cliente(String id, String nombre, String cel, String email) {
+        super(id, nombre, cel);
         this.email = email;
     }
 
@@ -20,7 +20,7 @@ public class Cliente extends Persona {
     public String toString() {
         return "Cliente{" +
                 "id='" + getId() + '\'' +
-                ", nombre='" + getName() + '\'' +
+                ", nombre='" + getNombre() + '\'' +
                 ", telefono='" + getCel() + '\'' +
                 ", email='" + email + '\'' +
                 '}';
