@@ -231,4 +231,28 @@ public class Main {
 
         System.out.println("Préstamo registrado correctamente.");
     }
+    public static void devolucion() {
+
+        System.out.print("Ingrese ID del préstamo: ");
+        String idPrestamo = sc.nextLine();
+
+        for (Prestamo prestamo : prestamos) {
+
+            if (prestamo.getIdPrestamo().equalsIgnoreCase(idPrestamo)) {
+
+                if (prestamo.getEstado().equalsIgnoreCase("DEVUELTO")) {
+                    System.out.println("Este préstamo ya fue devuelto.");
+                    return;
+                }
+
+                prestamo.setEstado("DEVUELTO");
+                prestamo.getLibro().setDisponible(true);
+
+                System.out.println("Devolución registrada correctamente.");
+                return;
+            }
+        }
+
+        System.out.println("Préstamo no encontrado.");
+    }
 }
